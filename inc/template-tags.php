@@ -60,17 +60,32 @@ if ( ! function_exists( 'cleo_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'cleo' ) );
+			$categories_list = get_the_category_list( esc_html__( ',', 'cleo' ) );
 			if ( $categories_list ) {
+				$cats_arr = (explode( ',', $categories_list ));
+
+				$preg_repaced =  preg_replace('/ rel\=/', "class=\"badge bg-secondary text-decoration-none link-light\" rel=", $cats_arr);
+
+				$categories_list2 = implode(' ', $preg_repaced );
+				
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'cleo' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
+				printf( '<span class="cat-links">' . esc_html__( '%1$s ', 'cleo' ) . '</span>', $categories_list2 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			} 
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'cleo' ) );
 			if ( $tags_list ) {
+
+				$tags_arr = (explode( ',', $tags_list ));
+
+				$preg_repaced =  preg_replace('/ rel\=/', "class=\"badge bg-secondary text-decoration-none link-light\" rel=", $tags_arr);
+
+				$tags_list2 = implode(' ', $preg_repaced );
+
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'cleo' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<span class="tags-links">' . esc_html__( '%1$s', 'cleo' ) . '</span>', $tags_list2 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+				//
 			}
 		}
 

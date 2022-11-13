@@ -212,3 +212,5 @@ function add_additional_class_on_anchor($classes, $item, $args) {
 add_filter( 'nav_menu_link_attributes', 'add_additional_class_on_anchor', 1, 3);
 
 
+remove_image_size('1536x1536');
+remove_image_size('2048x2048');

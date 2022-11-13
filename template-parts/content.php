@@ -11,11 +11,11 @@
         <!-- Page content-->
         <div class="container mt-5">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-10">
                     <!-- Post content-->
                     <article>
                         <!-- Post header-->
-                        <header class="mb-4">
+                        <header class="entry-header mb-4">
                             <!-- Post title-->
 							<?php
 							if ( is_singular() ) :
@@ -29,15 +29,13 @@
 								?>
 								<div class="text-muted fst-italic mb-2">
 									<?php
-									cleo_posted_on();
-									cleo_posted_by();
+									// cleo_posted_on();
+									// cleo_posted_by();
 									?>
 								</div><!-- .entry-meta -->
 							<?php endif; ?>
 
                             <!-- Post categories-->
-                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a>
-                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
 							<footer class="entry-footer">
 								<?php cleo_entry_footer(); ?>
 							</footer><!-- .entry-footer -->
@@ -124,21 +122,15 @@
                     </section>
                 </div>
             </div>
-        </div>
-
-	<header class="entry-header">
-		
-		
-	</header><!-- .entry-header -->
+		<div class="entry-content lead mb-5">
+			<footer class="entry-footer">
+				<?php cleo_entry_footer(); ?>
+			</footer><!-- .entry-footer -->	
+		</div><!-- .entry-content -->
+	</div>
 
 	
-
-	<div class="entry-content lead mb-5">
-		
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php cleo_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </section><!-- #post-<?php the_ID(); ?> -->
+<?php if ( is_singular() ) : ?>
 <hr class="m-0" />
+<?php endif; ?>
