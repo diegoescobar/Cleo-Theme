@@ -35,9 +35,10 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cleo' ); ?></a>
-
-	<!-- Navigation-->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+	
+	<header id="masthead" class="site-header">
+		<!-- Navigation-->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
 		
 			<span class="d-block d-lg-none site-title"><?php 
 			if ( is_front_page() && is_home() ) :
@@ -51,7 +52,9 @@
 			endif;
 			?></span>
 			<a class="navbar-brand js-scroll-trigger" href="#page-top">
-				<span class="d-none d-lg-block"><?php the_custom_logo(); ?></span>
+				<div class="d-none d-lg-block d-xl-block">
+					<?php echo get_custom_logo(); ?>
+				</div>
 			</a>
 		
 		<?php 
@@ -65,32 +68,27 @@
 
 		
 		<div class="collapse navbar-collapse" id="navbarResponsive">
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'main-menu',
-						'menu_class'	 => 'navbar-nav',
-						'add_li_class'	 => 'nav-item',
-						'container'		 => '',
-						'add_a_class'	=> 'nav-link js-scroll-trigger',
-					)
-				);
-				?>
+			<div class="row">
+				<div class="col-6">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'main-menu',
+							'menu_class'	 => 'navbar-nav',
+							'add_li_class'	 => 'nav-item',
+							'container'		 => '',
+							'add_a_class'	=> 'nav-link js-scroll-trigger',
+						)
+					);
+					?>
+				</div>
+				<div class="col-6 d-lg-none d-xl-none ">
+					<?php echo get_custom_logo(); ?>
+				</div>
+			</div>
 		</div>
 	</nav>
-	<header id="masthead" class="site-header">
 
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'cleo' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

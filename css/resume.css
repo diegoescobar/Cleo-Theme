@@ -32,6 +32,13 @@ body {
     font-weight: 400;
   }
   
+  .site-title a { 
+    color:#E9F2F9;
+  } 
+  .site-title a:hover, .site-title a:active { 
+    color:#6610f2;
+  } 
+
   .subheading {
     font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     text-transform: uppercase;
@@ -143,6 +150,11 @@ body {
     }
   }
 
+a.post-thumbnail img {
+  margin-bottom: 20px;
+}
+
+
 
 /* Make that logo a cirlce */
 .custom-logo {
@@ -152,7 +164,89 @@ body {
   -o-border-radius: 50%;
 }
 
-/*
+.wp-pagenavi {
+  clear: both;
+}
 
-*/
+.wp-pagenavi a, .wp-pagenavi span {
+  color: #FFF;
+  text-decoration: none;
+  background-color:#d48a6e;
+  border: 1px solid #B2D1E5;
+  padding: 5px 5px;
+  margin: 2px;
+}
 
+.wp-pagenavi a:hover, .wp-pagenavi span.current {
+  border-color: #E9F2F9;
+  background-color:#d48a6e;
+}
+
+.wp-pagenavi span.current {
+  font-weight: bold;
+  background-color:#bd5d38;
+}
+
+.navigation.wp-pagenavi {
+    text-align: center;
+}
+
+.navigation.wp-pagenavi ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  /* For IE, the outcast */
+  zoom:1;
+  display: inline;
+  line-height: 50px;
+}
+.navigation.wp-pagenavi ul {
+  list-style:none;
+  display: inline-block;
+}
+
+
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    color: #fff;
+    text-decoration:none;
+}
+  
+.navigation li {
+    display: inline;
+}
+  
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    background-color: #d48a6e;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 12px;
+    padding: 0.75rem;
+}
+  
+.navigation li a:hover,
+.navigation li.active a {
+    background-color: #bd5d38;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 670px) {
+  a.custom-logo-link > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  }
+}
+
+@media (max-width:480px){
+
+  .custom-logo-link img{
+      width: 60px;
+      height: auto;
+  }
+
+}

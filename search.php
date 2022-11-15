@@ -37,7 +37,8 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation();
+			// the_posts_navigation();
+			cleo_numeric_posts_nav();
 
 		else :
 
