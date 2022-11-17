@@ -11,28 +11,32 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main container mt-5">
-        <!-- Page content-->
-				<?php
+		<div class="row">
+			<div class="col-lg-8"> 
+			<!-- Page content-->
+			<?php
 				while ( have_posts() ) :
 					the_post();
-					get_template_part( 'template-parts/content', get_post_type() );
+					if (is_front_page()){
+						get_template_part( 'template-parts/content', get_post_type() );
+					}
 				endwhile; // End of the loop.
 				?>
-                <!-- Side widgets-->
-
-				<?php if( is_active_sidebar('front-widgets') ) { ?>
-					<!-- Side widgets-->
-					<div class="col-lg-4">
-						<?php dynamic_sidebar('front-widgets'); ?>
-					</div>
-					<!-- /widgets-container -->
-				<?php } ?>
-            </div>
-        </div>
-
-
+			</div>
+			<!-- Side widgets-->
+			<?php 
+			if( is_active_sidebar('front-widgets') ) { ?>
+				<!-- Side widgets-->
+				<div class="col-lg-4">
+					<?php
+					//get_sidebar();
+					dynamic_sidebar('front-widgets'); ?>
+				</div>
+				<!-- /widgets-container -->
+			<?php } ?>
+		</div>
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();

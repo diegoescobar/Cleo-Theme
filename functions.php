@@ -71,13 +71,11 @@ function cleo_setup() {
 	);
 
 	add_theme_support('dark-editor-style');
-	// add_theme_support('editor-color-palette');
-	// add_theme_support('editor-gradient-presets');
 	
 	add_theme_support( 'post-formats', array('aside','video','gallery','chat'));
 
-	// add_theme_support('responsive-embeds');
-	// add_theme_support('starter-content');
+	add_theme_support('responsive-embeds');
+	add_theme_support('starter-content');
 	// add_theme_support('editor-font-sizes');
 	// add_theme_support('editor-styles');
 
@@ -97,6 +95,96 @@ function cleo_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 	
+	/**
+	 * Register widget area.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+	 */
+	function feed_widgets_init() {
+
+
+		// single-widgets
+		
+
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Sidebar', 'feed' ),
+				'id'            => 'single-widgets',
+				'description'   => esc_html__( 'Add widgets here.', 'feed' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
+
+		
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Front', 'feed' ),
+				'id'            => 'front-widgets',
+				'description'   => esc_html__( 'Add widgets here.', 'feed' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
+
+
+		// search-widets
+		// page-widgets
+		// sidebar-widgets
+		// archive-widgets
+
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Search', 'feed' ),
+				'id'            => 'search-widgets',
+				'description'   => esc_html__( 'Add widgets here.', 'feed' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Page', 'feed' ),
+				'id'            => 'page-widgets',
+				'description'   => esc_html__( 'Add widgets here.', 'feed' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'General', 'feed' ),
+				'id'            => 'sidebar-widgets',
+				'description'   => esc_html__( 'Add widgets here.', 'feed' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Archive', 'feed' ),
+				'id'            => 'archive-widgets',
+				'description'   => esc_html__( 'Add widgets here.', 'feed' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
+
+
+	}
+	add_action( 'widgets_init', 'feed_widgets_init' );
 
 	/**
 	 * Add support for core custom logo.
@@ -143,10 +231,7 @@ function cleo_scripts() {
 
 	wp_enqueue_style( 'bs-resume', get_template_directory_uri() .'/css/resume.css', array(), _S_VERSION );
 
-	wp_enqueue_style( 'bs-resume-colour', get_template_directory_uri() .'/css/resume-colour.css', array(), _S_VERSION );
-
-	// wp_enqueue_style( 'resumecss', get_template_directory_uri() .'/cleo/startbootstrap-resume-gh-pages/startbootstrap-resume-gh-pages/css/styles.css',array(), _S_VERSION );
-
+	wp_enqueue_style( 'bs-resume-colours', get_template_directory_uri() .'/css/resume-colour.css', array(), _S_VERSION );
 
 	wp_enqueue_script( 'cleo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 

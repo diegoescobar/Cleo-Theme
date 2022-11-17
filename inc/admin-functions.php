@@ -148,18 +148,12 @@ if ( ! function_exists( 'cleo_admin_toolbar' ) ) :
         );
         $wp_admin_bar->add_menu( $args );
 
-
         if (!is_admin()){
-
-
             $args = array(
                 'id'     => 'admin-post',
                 'parent' => 'admin-nav-menu',
                 'title'  => __( 'Set Private', 'text_domain' ),
-                'href'	 => '?disable=' . get_the_ID(),
-                "meta"	 => array(
-                                'target'	=> "_prod"
-                            )
+                'href'	 => '?disable=' . get_the_ID()
             );
 
             $wp_admin_bar->add_menu( $args );

@@ -15,7 +15,8 @@
 get_header();
 ?>
 	<main id="primary" class="site-main container mt-5">
-
+		<div class="row">
+			<div class="col-lg-8">
 		<?php
 		if ( have_posts() ) :
 
@@ -49,9 +50,22 @@ get_header();
 
 		endif;
 		?>
+		</div>
 
+		<!-- Side widgets-->
+		<?php 
+			if( is_active_sidebar('sidebar-widgets') ) { ?>
+				<!-- Side widgets-->
+				<div class="col-lg-4">
+					<?php
+					//get_sidebar();
+					dynamic_sidebar('sidebar-widgets'); ?>
+				</div>
+				<!-- /widgets-container -->
+			<?php } ?>
+		</div>
 	</main><!-- #main -->
 
 <?php
-
+// get_sidebar();
 get_footer();
