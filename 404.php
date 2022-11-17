@@ -14,12 +14,12 @@ get_header();
 
 	<section class="error-404 not-found col-lg-12 mb-5">
 		<header class="page-header">
-			<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'cleo' ); ?></h1>
+			<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'cleopress' ); ?></h1>
 		</header><!-- .page-header -->
 
 		<div class="row">
 			<div class="page-content col-lg-8 mb-5">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'cleo' ); ?></p>
+				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'cleopress' ); ?></p>
 				<?php
 				get_search_form();
 
@@ -27,13 +27,13 @@ get_header();
 				?>
 				<?php
 				/* translators: %1$s: smiley */
-				$cleo_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'cleo' ), convert_smilies( ':)' ) ) . '</p>';
+				$cleo_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'cleopress' ), convert_smilies( ':)' ) ) . '</p>';
 				the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$cleo_archive_content" );
 				?>
 			</div>
 			<div class="widgets col-lg-4 mb-">
 				<div class="widget widget_categories">
-					<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'cleo' ); ?></h2>
+					<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'cleopress' ); ?></h2>
 					<ul>
 						<?php
 						wp_list_categories(

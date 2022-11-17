@@ -42,7 +42,7 @@
 				<?php
 				wp_link_pages(
 					array(
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'cleo' ),
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'cleopress' ),
 						'after'  => '</div>',
 					)
 				);
@@ -59,7 +59,7 @@
 					sprintf(
 						wp_kses(
 							/* translators: %s: Name of current post. Only visible to screen readers */
-							__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'cleo' ),
+							__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'cleopress' ),
 							array(
 								'span' => array(
 									'class' => array(),
@@ -73,7 +73,7 @@
 					the_excerpt(sprintf(
 						wp_kses(
 							/* translators: %s: Name of current post. Only visible to screen readers */
-							__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'cleo' ),
+							__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'cleopress' ),
 							array(
 								'span' => array(
 									'class' => array(),
