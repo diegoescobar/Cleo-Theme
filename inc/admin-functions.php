@@ -57,11 +57,10 @@ if ( ! function_exists( 'cleo_dev_toolbar' ) ) :
 
         $args = array(
             'id'     => 'dev-nav-menu',
-            'title'  => __( 'Test Navigation', 'text_domain' ),
+            'title'  => __( 'Navigation', 'text_domain' ),
         );
-        $wp_admin_bar->add_menu( $args );
 
-        // $rand_query = new WP_Query( array ( 'orderby' => 'rand', 'order' => 'ASC', 'posts_per_page' => '1', 'suppress_filters' => false ) );
+        $wp_admin_bar->add_menu( $args );
 
         $row = $wpdb->get_results("SELECT ID, post_title FROM " . $wpdb->prefix . "posts WHERE post_type = 'post' ORDER BY RAND() LIMIT 1");
 
@@ -107,7 +106,7 @@ if ( ! function_exists( 'cleo_dev_toolbar' ) ) :
                                 'target'	=> "_prod"
                             )
             );
-            $wp_admin_bar->add_menu( $args );
+            // $wp_admin_bar->add_menu( $args );
 
             $args = array(
                 'id'     => 'stage-post',
@@ -118,7 +117,7 @@ if ( ! function_exists( 'cleo_dev_toolbar' ) ) :
                                 'target'	=> "_prod"
                             )
             );
-            $wp_admin_bar->add_menu( $args );
+            // $wp_admin_bar->add_menu( $args );
 
             $args = array(
                 'id'     => 'prod-post',
@@ -129,11 +128,54 @@ if ( ! function_exists( 'cleo_dev_toolbar' ) ) :
                                 'target'	=> "_prod"
                             )
             );
-            $wp_admin_bar->add_menu( $args );
+            // $wp_admin_bar->add_menu( $args );
         }
     }
     add_action( 'wp_before_admin_bar_render', 'cleo_dev_toolbar', 999 );
 endif; 
+
+
+
+if ( ! function_exists( 'cleo_admin_toolbar' ) ) :
+    // Add Toolbar Menus
+    function cleo_admin_toolbar() {
+        global $wp_admin_bar;
+        global $wpdb;
+
+        $args = array(
+            'id'     => 'admin-nav-menu',
+            'title'  => __( 'Post Admin', 'text_domain' ),
+        );
+        $wp_admin_bar->add_menu( $args );
+
+
+        if (!is_admin()){
+
+
+            $args = array(
+                'id'     => 'admin-post',
+                'parent' => 'admin-nav-menu',
+                'title'  => __( 'Set Private', 'text_domain' ),
+                'href'	 => '?disable=' . get_the_ID(),
+                "meta"	 => array(
+                                'target'	=> "_prod"
+                            )
+            );
+
+            $wp_admin_bar->add_menu( $args );
+        }
+    }
+    add_action( 'wp_before_admin_bar_render', 'cleo_admin_toolbar', 999 );
+endif; 
+
+if ( ! function_exists( 'cleo_disable_srcset' ) ) :
+    function cleo_disable_srcset( $sources ) {
+        return false;
+    }
+    // if ( isLocalhost() ){
+    // 	add_filter( 'wp_calculate_image_srcset', 'cleo_disable_srcset' );
+    // }
+endif;
 
 if ( ! function_exists( 'cleo_disable_srcset' ) ) :
     function cleo_disable_srcset( $sources ) {
