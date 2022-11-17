@@ -58,17 +58,20 @@
                         array(
                             'span' => array(
                                 'class' => array(),
-                            ),
+                        )   ,
                         )
                     ),
                     wp_kses_post( get_the_title() )
                 ) );
-            endif; ?>
-        </section>
-        <?php if ( !is_singular() ) : ?>
-            <div><?php cleo_leave_comment(); ?></div>
-        <hr class="m-0" />
-        <?php endif; ?>
 
+                // the_content_more_link();
+
+            endif; ?>
+        
+        <?php if ( !is_singular() ) : ?>
+            <div class="nav-links"><?php cleo_leave_comment(); ?></div>
+        <?php endif; ?>
+        </section>
+        <hr class="m-0" />
 
     </article>

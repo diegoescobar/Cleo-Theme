@@ -389,4 +389,40 @@ function wph_add_class_for_p_tag($content) {
 }
 
 add_filter('the_content', 'wph_add_class_for_p_tag', 9999);
-// add_filter('the_excerpt', 'wph_add_class_for_p_tag', 9999);
+add_filter('the_excerpt', 'wph_add_class_for_p_tag', 9999);
+
+function prefix_category_title( $title ) {
+    if ( is_category() ) {
+        $title = single_cat_title( '', false );
+    }
+	if ( is_tag() ){
+		$title = single_tag_title( '', false );
+	}
+    return $title;
+}
+add_filter( 'get_the_archive_title', 'prefix_category_title' );
+
+
+/**
+ * Filter the "read more" excerpt string link to the post.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function wpdocs_excerpt_more( $more ) {
+	if ( ! is_single() ) {
+		$more = sprintf( '<div class="nav-links"><a class="read-more more-link" href="%1$s">%2$s</a></div>',
+			get_permalink( get_the_ID() ),
+			__( 'Read More', 'textdomain' )
+		);
+	}
+
+	return $more;
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+function modify_read_more_link() {
+	return '<a class="more-link" href="' . get_permalink() . '">Continue Reading</a>';
+   }
+add_filter( 'the_content_more_link', 'modify_read_more_link' );
+   
