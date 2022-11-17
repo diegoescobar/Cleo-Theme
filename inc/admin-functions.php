@@ -101,7 +101,7 @@ if ( ! function_exists( 'cleo_dev_toolbar' ) ) :
                 'id'     => 'dev-post',
                 'parent' => 'dev-nav-menu',
                 'title'  => __( 'View on Dev', 'text_domain' ),
-                'href'	 => 'https://dev1.xtramagazine.com?p=' . get_the_ID(),
+                'href'	 => 'https://dev1.domain.com?p=' . get_the_ID(),
                 "meta"	 => array(
                                 'target'	=> "_prod"
                             )
@@ -112,7 +112,7 @@ if ( ! function_exists( 'cleo_dev_toolbar' ) ) :
                 'id'     => 'stage-post',
                 'parent' => 'dev-nav-menu',
                 'title'  => __( 'View on Staging', 'text_domain' ),
-                'href'	 => 'https://staging1.xtramagazine.com?p=' . get_the_ID(),
+                'href'	 => 'https://staging1.domain.com?p=' . get_the_ID(),
                 "meta"	 => array(
                                 'target'	=> "_prod"
                             )
@@ -123,7 +123,7 @@ if ( ! function_exists( 'cleo_dev_toolbar' ) ) :
                 'id'     => 'prod-post',
                 'parent' => 'dev-nav-menu',
                 'title'  => __( 'View on Production', 'text_domain' ),
-                'href'	 => 'http://dailyxtra.com?p=' . get_the_ID(),
+                'href'	 => 'http://domain.com?p=' . get_the_ID(),
                 "meta"	 => array(
                                 'target'	=> "_prod"
                             )
