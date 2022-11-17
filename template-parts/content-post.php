@@ -19,8 +19,6 @@
 					<?php
 					if ( is_singular() ) :
 						the_title( '<h1 class="entry-title fw-bolder mb-1">', '</h1>' );
-					elseif ( is_home() || is_front_page()):
-						// the_title( '<p class="entry-title fw-bolder mb-0">', '</p>' );
 					else :
 						the_title( '<h2 class="entry-title text-primary fw-bolder mb-1"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 					endif;
@@ -31,10 +29,12 @@
 					<?php cleo_entry_footer(); ?>
 				</header>
 				
+                <?php if ( !has_post_format( 'gallery' ) ) { ?>
 				<!-- Preview image figure-->
 				<figure class="mb-4">
 					<?php cleo_post_thumbnail(); ?>
 				</figure>
+                <?php } ?>
 
 				<!-- Post content-->
 				<section class="mb-5">

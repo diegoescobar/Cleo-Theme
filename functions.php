@@ -70,6 +70,18 @@ function cleo_setup() {
 		)
 	);
 
+	add_theme_support('dark-editor-style');
+	// add_theme_support('editor-color-palette');
+	// add_theme_support('editor-gradient-presets');
+	
+	add_theme_support( 'post-formats', array('aside','video','gallery','chat'));
+
+	// add_theme_support('responsive-embeds');
+	// add_theme_support('starter-content');
+	// add_theme_support('editor-font-sizes');
+	// add_theme_support('editor-styles');
+
+
 	// Set up the WordPress core custom background feature.
 	add_theme_support(
 		'custom-background',
@@ -162,12 +174,22 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
+
+require get_template_directory() . '/inc/breadcrumb.php';
+
 /**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
+function add_favicon() {
+	echo '<link rel="shortcut icon" type="image/x-icon" href="'.get_template_directory_uri().'/assets/favicon.ico" />';
+}
+
+add_action('wp_head', 'add_favicon');
 
 
 function add_additional_class_on_li($classes, $item, $args) {
