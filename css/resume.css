@@ -163,6 +163,14 @@ a.post-thumbnail img {
   -webkit-border-radius: 50%;
   -o-border-radius: 50%;
 }
+.custom-logo-link {
+  margin: 10px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 13px solid rgba(255,255,255,0.4);
+}
 
 .wp-pagenavi {
   clear: both;
@@ -205,19 +213,27 @@ a.post-thumbnail img {
   display: inline-block;
 }
 
-
+.nav-links a,
+.nav-links a:hover,
+.nav-links a.active,
+.nav-links a.disabled,
 .navigation li a,
 .navigation li a:hover,
 .navigation li.active a,
 .navigation li.disabled {
     color: #fff;
     text-decoration:none;
+    line-height: 50px;
 }
   
 .navigation li {
     display: inline;
 }
-  
+
+.nav-links a,
+.nav-links a:hover,
+.nav-links a.active,
+.nav-links a.disabled,
 .navigation li a,
 .navigation li a:hover,
 .navigation li.active a,
@@ -229,6 +245,9 @@ a.post-thumbnail img {
     padding: 0.75rem;
 }
   
+
+.nav-links a:hover,
+.nav-links a.active,
 .navigation li a:hover,
 .navigation li.active a {
     background-color: #bd5d38;

@@ -14,15 +14,12 @@
 
 get_header();
 ?>
-
- 	
-
-	<main id="primary" class="site-main container-fluid p-0"">
+	<main id="primary" class="site-main container mt-5">
 
 		<?php
 		if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) :
+			if ( !is_home() && !is_front_page() ) :
 				?>
 				<header>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>

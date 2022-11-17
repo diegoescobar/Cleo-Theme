@@ -270,3 +270,12 @@ function cleo_numeric_posts_nav() {
     echo '</ul></div>' . "\n";
   
 }
+
+/** Bootstrap Template fix */
+function wph_add_class_for_p_tag($content) {
+    $content = str_replace('<p>', '<p class="fs-5 mb-4">', $content);
+    return $content;
+}
+
+add_filter('the_content', 'wph_add_class_for_p_tag', 9999);
+// add_filter('the_excerpt', 'wph_add_class_for_p_tag', 9999);

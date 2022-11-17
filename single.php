@@ -10,8 +10,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
+	<main id="primary" class="site-main container mt-5">
 		<?php
 		while ( have_posts() ) :
 			the_post();
