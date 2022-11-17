@@ -53,6 +53,29 @@ if ( ! function_exists( 'cleo_posted_by' ) ) :
 endif;
 
 if ( ! function_exists( 'cleo_entry_footer' ) ) :
+	function cleo_leave_comment() {
+		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+			echo '<span class="comments-link">';
+			comments_popup_link(
+				sprintf(
+					wp_kses(
+						/* translators: %s: post title */
+						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'cleo' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					wp_kses_post( get_the_title() )
+				)
+			);
+			echo '</span>';
+		}
+	}
+endif;
+
+if ( ! function_exists( 'cleo_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
@@ -89,24 +112,7 @@ if ( ! function_exists( 'cleo_entry_footer' ) ) :
 			}
 		}
 
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'cleo' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post( get_the_title() )
-				)
-			);
-			echo '</span>';
-		}
+		echo '<div>';
 
 		edit_post_link(
 			sprintf(
@@ -122,8 +128,12 @@ if ( ! function_exists( 'cleo_entry_footer' ) ) :
 				wp_kses_post( get_the_title() )
 			),
 			'<span class="edit-link">',
-			'</span>'
+			'</span> | '
 		);
+
+		admin_function_options();
+
+		echo '</div>';
 	}
 endif;
 

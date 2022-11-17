@@ -10,6 +10,7 @@
 ?>
 <div class="container mt-5">
 	<div class="row">
+        <?php the_breadcrumb(); ?>
 		<div class="col-lg-8">
 			<!-- Post content-->
 			<article>
@@ -55,6 +56,12 @@
 					);
 					?>
 				</section>
+                <?php if ( !is_singular() ) : ?>
+                    <div><?php cleo_leave_comment(); ?></div>
+                <hr class="m-0" />
+                <?php endif; ?>
+
+
 			</article>
 		</div>
 		<?php if( is_active_sidebar('page-widgets') ) { ?>

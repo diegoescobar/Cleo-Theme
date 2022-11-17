@@ -143,6 +143,8 @@ function cleo_scripts() {
 
 	wp_enqueue_style( 'bs-resume', get_template_directory_uri() .'/css/resume.css', array(), _S_VERSION );
 
+	wp_enqueue_style( 'bs-resume-colour', get_template_directory_uri() .'/css/resume-colour.css', array(), _S_VERSION );
+
 	// wp_enqueue_style( 'resumecss', get_template_directory_uri() .'/cleo/startbootstrap-resume-gh-pages/startbootstrap-resume-gh-pages/css/styles.css',array(), _S_VERSION );
 
 
@@ -176,6 +178,8 @@ require get_template_directory() . '/inc/customizer.php';
 
 
 require get_template_directory() . '/inc/breadcrumb.php';
+
+require get_template_directory() . '/inc/admin-functions.php';
 
 /**
  * Load Jetpack compatibility file.
