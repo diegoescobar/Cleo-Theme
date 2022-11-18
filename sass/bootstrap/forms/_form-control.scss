@@ -14,6 +14,8 @@
   background-color: $input-bg;
   background-clip: padding-box;
   border: $input-border-width solid $input-border-color;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none; // Fix appearance for date inputs in Safari
 
   // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
@@ -53,27 +55,75 @@
   }
 
   // Placeholder
+  &::-moz-placeholder {
+    color: $input-placeholder-color;
+    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    color: $input-placeholder-color;
+    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    opacity: 1;
+  }
   &::placeholder {
     color: $input-placeholder-color;
     // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
     opacity: 1;
   }
 
-  // Disabled inputs
+  // Disabled and read-only inputs
   //
   // HTML5 says that controls under a fieldset > legend:first-child won't be
   // disabled if the fieldset is disabled. Due to implementation difficulty, we
   // don't honor that edge case; we style them as disabled anyway.
-  &:disabled {
-    color: $input-disabled-color;
+  &:disabled,
+  &[readonly] {
     background-color: $input-disabled-bg;
     border-color: $input-disabled-border-color;
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
     opacity: 1;
   }
 
+  &::-webkit-file-upload-button {
+    padding:  $input-padding-y $input-padding-x;
+    margin: (-$input-padding-y) (-$input-padding-x);
+    -webkit-margin-end: $input-padding-x;
+    margin-inline-end: $input-padding-x;
+    color: $gray-900;
+    background-color: $gray-200;
+    pointer-events: none;
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    border-inline-end-width: 1px;
+    border-radius: 0;
+    -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+
   // File input buttons theming
   &::file-selector-button {
+    padding: $input-padding-y $input-padding-x;
+    margin: (-$input-padding-y) (-$input-padding-x);
+    -webkit-margin-end: $input-padding-x;
+    margin-inline-end: $input-padding-x;
+    color: $form-file-button-color;
+    @include gradient-bg($form-file-button-bg);
+    pointer-events: none;
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    border-inline-end-width: $input-border-width;
+    border-radius: 0; // stylelint-disable-line property-disallowed-list
+    @include transition($btn-transition);
+  }
+
+  &:hover:not(:disabled):not([readonly])::file-selector-button {
+    background-color: $form-file-button-hover-bg;
+  }
+
+  &::-webkit-file-upload-button {
     padding: $input-padding-y $input-padding-x;
     margin: (-$input-padding-y) (-$input-padding-x);
     margin-inline-end: $input-padding-x;
@@ -88,7 +138,7 @@
     @include transition($btn-transition);
   }
 
-  &:hover:not(:disabled):not([readonly])::file-selector-button {
+  &:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
     background-color: $form-file-button-hover-bg;
   }
 }
@@ -108,10 +158,6 @@
   background-color: transparent;
   border: solid transparent;
   border-width: $input-border-width 0;
-
-  &:focus {
-    outline: 0;
-  }
 
   &.form-control-sm,
   &.form-control-lg {
@@ -138,6 +184,12 @@
     margin: (-$input-padding-y-sm) (-$input-padding-x-sm);
     margin-inline-end: $input-padding-x-sm;
   }
+
+  &::-webkit-file-upload-button {
+    padding: $input-padding-y-sm $input-padding-x-sm;
+    margin: (-$input-padding-y-sm) (-$input-padding-x-sm);
+    margin-inline-end: $input-padding-x-sm;
+  }
 }
 
 .form-control-lg {
@@ -147,6 +199,12 @@
   @include border-radius($input-border-radius-lg);
 
   &::file-selector-button {
+    padding: $input-padding-y-lg $input-padding-x-lg;
+    margin: (-$input-padding-y-lg) (-$input-padding-x-lg);
+    margin-inline-end: $input-padding-x-lg;
+  }
+
+  &::-webkit-file-upload-button {
     padding: $input-padding-y-lg $input-padding-x-lg;
     margin: (-$input-padding-y-lg) (-$input-padding-x-lg);
     margin-inline-end: $input-padding-x-lg;
@@ -173,7 +231,7 @@ textarea {
 
 .form-control-color {
   width: $form-color-width;
-  height: $input-height;
+  height: auto; // Override fixed browser height
   padding: $input-padding-y;
 
   &:not(:disabled):not([readonly]) {
@@ -181,14 +239,12 @@ textarea {
   }
 
   &::-moz-color-swatch {
-    border: 0 !important; // stylelint-disable-line declaration-no-important
+    height: if(unit($input-line-height) == "", $input-line-height * 1em, $input-line-height);
     @include border-radius($input-border-radius);
   }
 
   &::-webkit-color-swatch {
+    height: if(unit($input-line-height) == "", $input-line-height * 1em, $input-line-height);
     @include border-radius($input-border-radius);
   }
-
-  &.form-control-sm { height: $input-height-sm; }
-  &.form-control-lg { height: $input-height-lg; }
 }

@@ -1,0 +1,278 @@
+body {
+    padding-top: 3.375rem;
+    color: #6c757d;
+  }
+  
+  @media (min-width: 992px) {
+    body {
+      padding-top: 0;
+      padding-left: 17rem;
+    }
+  }
+  h1, .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    text-transform: uppercase;
+  }
+  
+  h1, .h1 {
+    line-height: 1;
+  }
+  
+  p.lead {
+    font-size: 1.15rem;
+    font-weight: 400;
+  }
+  
+  .site-title a { 
+    color:#E9F2F9;
+  } 
+  .site-title a:hover, .site-title a:active { 
+    color:#6610f2;
+  } 
+
+  .subheading {
+    font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+  
+  #sideNav {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  #sideNav .navbar-nav .nav-item .nav-link {
+    font-weight: 800;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+  }
+  #sideNav .navbar-toggler:focus {
+    outline-color: #d48a6e;
+  }
+  
+  @media (min-width: 992px) {
+    #sideNav {
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      width: 17rem;
+      height: 100vh;
+    }
+    #sideNav .navbar-brand {
+      display: flex;
+      margin: auto auto 0;
+      padding: 0.5rem;
+    }
+    #sideNav .navbar-brand .img-profile {
+      max-width: 10rem;
+      max-height: 10rem;
+      border: 0.5rem solid rgba(255, 255, 255, 0.2);
+    }
+    #sideNav .navbar-collapse {
+      display: flex;
+      align-items: flex-start;
+      flex-grow: 0;
+      width: 100%;
+      margin-bottom: auto;
+    }
+    #sideNav .navbar-collapse .navbar-nav {
+      flex-direction: column;
+      width: 100%;
+    }
+    #sideNav .navbar-collapse .navbar-nav .nav-item {
+      display: block;
+    }
+    #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
+      display: block;
+    }
+  }
+  .social-icons .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5rem;
+    width: 3.5rem;
+    background-color: #495057;
+    color: #fff;
+    border-radius: 100%;
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+  }
+  .social-icons .social-icon:last-child {
+    margin-right: 0;
+  }
+  .social-icons .social-icon:hover {
+    background-color: #bd5d38;
+  }
+  
+  .dev-icons {
+    font-size: 3rem;
+  }
+  
+  section.resume-section {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    max-width: 75rem;
+  }
+  section.resume-section .resume-section-content {
+    width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    section.resume-section {
+      min-height: 100vh;
+    }
+  }
+  @media (min-width: 992px) {
+    section.resume-section {
+      padding-left: 3rem;
+      padding-right: 3rem;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+  }
+
+a.post-thumbnail img {
+  margin-bottom: 20px;
+}
+
+
+
+/* Make that logo a cirlce */
+.custom-logo {
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.custom-logo-link {
+  margin: 10px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 13px solid rgba(255,255,255,0.4);
+}
+
+.wp-pagenavi {
+  clear: both;
+}
+
+.wp-pagenavi a, .wp-pagenavi span {
+  color: #FFF;
+  text-decoration: none;
+  background-color:#d48a6e;
+  border: 1px solid #B2D1E5;
+  padding: 5px 5px;
+  margin: 2px;
+}
+
+.wp-pagenavi a:hover, .wp-pagenavi span.current {
+  border-color: #E9F2F9;
+  background-color:#d48a6e;
+}
+
+.wp-pagenavi span.current {
+  font-weight: bold;
+  background-color:#bd5d38;
+}
+
+.navigation.wp-pagenavi {
+    text-align: center;
+}
+
+.navigation.wp-pagenavi ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  /* For IE, the outcast */
+  zoom:1;
+  display: inline;
+  line-height: 50px;
+}
+.navigation.wp-pagenavi ul {
+  list-style:none;
+  display: inline-block;
+}
+
+.nav-links a,
+.nav-links a:hover,
+.nav-links a.active,
+.nav-links a.disabled,
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    color: #fff;
+    text-decoration:none;
+    line-height: 50px;
+}
+  
+.navigation li {
+    display: inline;
+}
+
+.nav-links a,
+.nav-links a:hover,
+.nav-links a.active,
+.nav-links a.disabled,
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    background-color: #d48a6e;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 12px;
+    padding: 0.75rem;
+}
+  
+
+.nav-links a:hover,
+.nav-links a.active,
+.navigation li a:hover,
+.navigation li.active a {
+    background-color: #bd5d38;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 670px) {
+  a.custom-logo-link > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  }
+}
+
+@media (max-width:480px){
+
+  .custom-logo-link img{
+      width: 60px;
+      height: auto;
+  }
+
+}
+
+.breadcrumb{
+  --bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;); 
+  clear: both !important; 
+  display: block; 
+  position: relative;
+}

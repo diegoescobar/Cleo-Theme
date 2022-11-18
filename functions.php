@@ -223,15 +223,15 @@ function cleo_scripts() {
 	wp_enqueue_style( 'cleo-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'cleo-style', 'rtl', 'replace' );
 
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() .'/css/bootstrap/css/bootstrap.css',array(), _S_VERSION );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() .'/css/bootstrap-generated.css',array(), _S_VERSION );
 	
-	wp_enqueue_style( 'bootstrap','https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js', array(), _S_VERSION );
+	// wp_enqueue_style( 'bootstrap','https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js', array(), _S_VERSION );
 	
-	wp_enqueue_style( 'bs-template', get_template_directory_uri() .'/css/bootstrap-template.css', array(), _S_VERSION );
+	// wp_enqueue_style( 'bs-template', get_template_directory_uri() .'/css/bootstrap-template.css', array(), _S_VERSION );
 
-	wp_enqueue_style( 'bs-resume', get_template_directory_uri() .'/css/resume.css', array(), _S_VERSION );
+	// wp_enqueue_style( 'bs-resume', get_template_directory_uri() .'/css/resume.css', array(), _S_VERSION );
 
-	wp_enqueue_style( 'bs-resume-colours', get_template_directory_uri() .'/css/resume-colour.css', array(), _S_VERSION );
+	// wp_enqueue_style( 'bs-resume-colours', get_template_directory_uri() .'/css/resume-colour.css', array(), _S_VERSION );
 
 	wp_enqueue_script( 'cleo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
