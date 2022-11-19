@@ -10,7 +10,7 @@
 ?>
 
 <!-- Post content-->
-<article>
+<article id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<!-- Post header-->
 	<header class="mb-4">
 		<!-- Post title-->

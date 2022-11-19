@@ -12,7 +12,13 @@ get_header();
 
 	<main id="primary" class="site-main container mt-5">
 		<div class="row">
-			<div class="col-lg-8"> 
+			<div class="<?php 
+			if( is_active_sidebar('front-widgets') ) { 
+				echo 'col-lg-8';
+			}else{
+				echo 'col-lg-11';
+			}
+			?>"> 
 			<!-- Page content-->
 			<?php
 				while ( have_posts() ) :
