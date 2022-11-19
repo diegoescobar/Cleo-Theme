@@ -26,19 +26,24 @@ body {
   h1, .h1 {
     line-height: 1;
   }
+
+  a {
+    font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
   
   p.lead {
     font-size: 1.15rem;
     font-weight: 400;
   }
   
-  .site-title a { 
+  .site-title {
+    a { 
     color:$border-color;
-  } 
-  .site-title a:hover, .site-title a:active { 
-    color:$indigo;
-  } 
-
+        &:hover, &:active { 
+            color:$indigo;
+        } 
+    }
+  }
   .subheading {
     font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     text-transform: uppercase;
@@ -46,21 +51,21 @@ body {
     font-size: 1.5rem;
   }
   
-  #sideNav {
+  #sideNav{
     padding-left: 1rem;
     padding-right: 1rem;
-  }
-  #sideNav .navbar-nav .nav-item .nav-link {
+  
+   .navbar-nav .nav-item .nav-link {
     font-weight: 800;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
   }
-  #sideNav .navbar-toggler:focus {
+   .navbar-toggler:focus {
     outline-color: $link-hover-color;
   }
   
   @media (min-width: 992px) {
-    #sideNav {
+     
       padding-left: 0;
       padding-right: 0;
       text-align: center;
@@ -71,54 +76,66 @@ body {
       flex-direction: column;
       width: 17rem;
       height: 100vh;
-    }
-    #sideNav .navbar-brand {
+    
+     .navbar-brand {
       display: flex;
       margin: auto auto 0;
       padding: 0.5rem;
+    
+        .img-profile {
+            max-width: 10rem;
+            max-height: 10rem;
+            border: 0.5rem solid rgba(255, 255, 255, 0.2);
+        }
     }
-    #sideNav .navbar-brand .img-profile {
-      max-width: 10rem;
-      max-height: 10rem;
-      border: 0.5rem solid rgba(255, 255, 255, 0.2);
-    }
-    #sideNav .navbar-collapse {
-      display: flex;
-      align-items: flex-start;
-      flex-grow: 0;
-      width: 100%;
-      margin-bottom: auto;
-    }
-    #sideNav .navbar-collapse .navbar-nav {
-      flex-direction: column;
-      width: 100%;
-    }
-    #sideNav .navbar-collapse .navbar-nav .nav-item {
-      display: block;
-    }
-    #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
-      display: block;
+     .navbar-collapse {
+        display: flex;
+        align-items: flex-start;
+        flex-grow: 0;
+        width: 100%;
+        margin-bottom: auto;
+        
+        .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+            .nav-item {
+            display: block;
+                .nav-link {
+                display: block;
+                }
+            }
+            
+        }
     }
   }
-  .social-icons .social-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 3.5rem;
-    width: 3.5rem;
-    background-color: $gray-700;
-    color: $white;
-    border-radius: 100%;
-    font-size: 1.5rem;
-    margin-right: 1.5rem;
+}
+    .entry-title {
+        line-break: auto;
+        -ms-word-wrap: break-word;
+        word-wrap: break-word;
+    }
+
+.social-icons{
+    .social-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 3.5rem;
+        width: 3.5rem;
+        background-color: $gray-700;
+        color: $white;
+        border-radius: 100%;
+        font-size: 1.5rem;
+        margin-right: 1.5rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            background-color: $primary;
+        }
+    }
   }
-  .social-icons .social-icon:last-child {
-    margin-right: 0;
-  }
-  .social-icons .social-icon:hover {
-    background-color: $primary;
-  }
-  
   .dev-icons {
     font-size: 3rem;
   }
@@ -154,115 +171,111 @@ a.post-thumbnail img {
   margin-bottom: 20px;
 }
 
-
-
-/* Make that logo a cirlce */
-.custom-logo {
-  border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -o-border-radius: 50%;
-}
-.custom-logo-link {
-  margin: 10px;
-  border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -o-border-radius: 50%;
-  border: 13px solid rgba(255,255,255,0.4);
+a.badge.bg-secondary.link-light {
+    color: $gray-200;
+    
+    &:hover{
+        color: $gray-700;
+    }
 }
 
 .wp-pagenavi {
   clear: both;
-}
+    a, span {
+    color: $white;
+    text-decoration: none;
+    background-color: $link-hover-color;
+    border: 1px solid $border-color;
+    padding: 5px 5px;
+    margin: 2px;
+    }
 
-.wp-pagenavi a, .wp-pagenavi span {
-  color: $white;
-  text-decoration: none;
-  background-color:$link-hover-color;
-  border: 1px solid #B2D1E5;
-  padding: 5px 5px;
-  margin: 2px;
-}
+    a:hover, span.current {
+    border-color: $border-color;
+    background-color: $link-hover-color;
+    }
 
-.wp-pagenavi a:hover, .wp-pagenavi span.current {
-  border-color: $border-color;
-  background-color: $link-hover-color;
-}
-
-.wp-pagenavi span.current {
-  font-weight: bold;
-  background-color:$primary;
+    span.current {
+    font-weight: bold;
+    background-color:$primary;
+    }
 }
 
 .navigation.wp-pagenavi {
     text-align: center;
-}
 
-.navigation.wp-pagenavi ul {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  /* For IE, the outcast */
-  zoom:1;
-  display: inline;
-  line-height: 50px;
-}
-.navigation.wp-pagenavi ul {
-  list-style:none;
-  display: inline-block;
-}
-
-.nav-links a,
-.nav-links a:hover,
-.nav-links a.active,
-.nav-links a.disabled,
-.navigation li a,
-.navigation li a:hover,
-.navigation li.active a,
-.navigation li.disabled {
-    color: $white;
-    text-decoration:none;
-    line-height: 50px;
-}
-  
-.navigation li {
+    .navigation.wp-pagenavi ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    /* For IE, the outcast */
+    zoom:1;
     display: inline;
+    line-height: 50px;
+    list-style:none;
+    display: inline-block;
+    }
 }
 
-.nav-links a,
-.nav-links a:hover,
-.nav-links a.active,
-.nav-links a.disabled,
-.navigation li a,
-.navigation li a:hover,
-.navigation li.active a,
-.navigation li.disabled {
-    background-color: $link-hover-color;
-    border-radius: 3px;
-    cursor: pointer;
-    padding: 12px;
-    padding: 0.75rem;
-}
-  
+.nav-links,
+.navigation {
+    a,
+    a:hover,
+    a.active,
+    a.disabled,
+    li a,
+    li a:hover,
+    li.active a,
+    li.disabled {
+        color: $white;
+        font-family: $font-family-monospace;
+        background-color: $primary;
+        border-radius: 3px;
+        cursor: pointer;
+        padding: 12px;
+        padding: 0.75rem;
+        text-decoration: none;
+        line-height: 50px;
+    }
+    
+    li {
+        display: inline;
+    }
 
-.nav-links a:hover,
-.nav-links a.active,
-.navigation li a:hover,
-.navigation li.active a {
-    background-color: $primary;
+    a:hover,
+    a.active,
+    li a:hover,
+    li.active a {
+        background-color: $link-hover-color;
+    }
+}
+
+
+/* Make that logo a cirlce */
+.custom-logo {
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.custom-logo-link {
+    margin: 10px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 13px solid rgba(255,255,255,0.4);
 }
 
 @media only screen and (min-width: 200px) and (max-width: 670px) {
   a.custom-logo-link > img {
-  display: block;
-  width: 100%;
-  height: auto;
+    display: block;
+    width: 100%;
+    height: auto;
   }
 }
 
 @media (max-width:480px){
-
   .custom-logo-link img{
       width: 60px;
       height: auto;
