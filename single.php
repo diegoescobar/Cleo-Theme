@@ -12,8 +12,9 @@ get_header();
 	<main id="primary" class="site-main container mt-5">
 		<div class="row">
 			<?php if ( is_singular() ) : ?>
-				<div class="col-lg-12"><?php the_breadcrumb();?></div><?php endif; ?>
-			<div class="col-lg-8"> 
+				<div class="col-lg-12"><?php the_breadcrumb();?></div>
+			<?php endif; ?>
+			<div class="<?php echo ( is_active_sidebar('single-widgets') ) ?  'col-lg-8' : 'col-lg-11'; ?>">
 			<?php 
 			while ( have_posts() ) :
 				the_post();

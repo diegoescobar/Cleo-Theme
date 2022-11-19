@@ -13,11 +13,8 @@ get_header();
 	<main id="primary" class="site-main container mt-5">
 		<div class="row">
 			<div class="<?php 
-			if( is_active_sidebar('front-widgets') ) { 
-				echo 'col-lg-8';
-			}else{
-				echo 'col-lg-11';
-			}
+			// if ($user['is_logged_in'] ? $user['first_name'] : 'Guest').'!';
+			echo ( is_active_sidebar('front-widgets') ) ?  'col-lg-8' : 'col-lg-11';
 			?>"> 
 			<!-- Page content-->
 			<?php

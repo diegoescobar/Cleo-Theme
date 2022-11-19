@@ -16,7 +16,7 @@ get_header();
 ?>
 	<main id="primary" class="site-main container mt-5">
 		<div class="row">
-			<div class="col-lg-8">
+			<div class="<?php echo ( is_active_sidebar('sidebar-widgets') ) ?  'col-lg-8' : 'col-lg-11'; ?>"> 
 		<?php
 		if ( have_posts() ) :
 
