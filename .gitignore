@@ -23,3 +23,5 @@ node_modules/
 *.sqlite
 
 cleo/
+
+.DS_Store

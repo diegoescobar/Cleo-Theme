@@ -1,6 +1,6 @@
 body {
     padding-top: 3.375rem;
-    color: #6c757d;
+    color: $gray-600;
   }
   
   @media (min-width: 992px) {
@@ -33,10 +33,10 @@ body {
   }
   
   .site-title a { 
-    color:#E9F2F9;
+    color:$border-color;
   } 
   .site-title a:hover, .site-title a:active { 
-    color:#6610f2;
+    color:$indigo;
   } 
 
   .subheading {
@@ -56,7 +56,7 @@ body {
     text-transform: uppercase;
   }
   #sideNav .navbar-toggler:focus {
-    outline-color: #d48a6e;
+    outline-color: $link-hover-color;
   }
   
   @media (min-width: 992px) {
@@ -106,8 +106,8 @@ body {
     justify-content: center;
     height: 3.5rem;
     width: 3.5rem;
-    background-color: #495057;
-    color: #fff;
+    background-color: $gray-700;
+    color: $white;
     border-radius: 100%;
     font-size: 1.5rem;
     margin-right: 1.5rem;
@@ -116,7 +116,7 @@ body {
     margin-right: 0;
   }
   .social-icons .social-icon:hover {
-    background-color: #bd5d38;
+    background-color: $primary;
   }
   
   .dev-icons {
@@ -177,22 +177,22 @@ a.post-thumbnail img {
 }
 
 .wp-pagenavi a, .wp-pagenavi span {
-  color: #FFF;
+  color: $white;
   text-decoration: none;
-  background-color:#d48a6e;
+  background-color:$link-hover-color;
   border: 1px solid #B2D1E5;
   padding: 5px 5px;
   margin: 2px;
 }
 
 .wp-pagenavi a:hover, .wp-pagenavi span.current {
-  border-color: #E9F2F9;
-  background-color:#d48a6e;
+  border-color: $border-color;
+  background-color: $link-hover-color;
 }
 
 .wp-pagenavi span.current {
   font-weight: bold;
-  background-color:#bd5d38;
+  background-color:$primary;
 }
 
 .navigation.wp-pagenavi {
@@ -221,7 +221,7 @@ a.post-thumbnail img {
 .navigation li a:hover,
 .navigation li.active a,
 .navigation li.disabled {
-    color: #fff;
+    color: $white;
     text-decoration:none;
     line-height: 50px;
 }
@@ -238,7 +238,7 @@ a.post-thumbnail img {
 .navigation li a:hover,
 .navigation li.active a,
 .navigation li.disabled {
-    background-color: #d48a6e;
+    background-color: $link-hover-color;
     border-radius: 3px;
     cursor: pointer;
     padding: 12px;
@@ -250,7 +250,7 @@ a.post-thumbnail img {
 .nav-links a.active,
 .navigation li a:hover,
 .navigation li.active a {
-    background-color: #bd5d38;
+    background-color: $primary;
 }
 
 @media only screen and (min-width: 200px) and (max-width: 670px) {

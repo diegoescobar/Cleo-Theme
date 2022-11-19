@@ -50,6 +50,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 --------------------------------------------------------------*/
 
+
+/*--------------------------------------------------------------
+# Bootstrap
+--------------------------------------------------------------*/
+@import "bootstrap/bootstrap";
+
+
 // Import variables and mixins.
 @import "abstracts/abstracts";
 
@@ -64,11 +71,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Box sizing
 --------------------------------------------- */
 @import "generic/box-sizing";
-
-/*--------------------------------------------------------------
-# Bootstrap
---------------------------------------------------------------*/
-@import "bootstrap/bootstrap";
 
 /*--------------------------------------------------------------
 # Base
