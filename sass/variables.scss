@@ -1,0 +1,111 @@
+$gray-100 : #123 !default;
+$gray-200 : #123 !default;
+$gray-700 : #123 !default;
+$white : #123 !default;
+$primary : #123 !default;
+$indigo : #123 !default;
+$border-color : #123 !default;
+$link-hover-color : #123 !default;
+$font-family-monospace : #123 !default;
+$primary : #666 !default;
+$secondary : #666 !default;
+$text-size : 18px !default;
+
+body {
+    background-color: $gray-100;
+  }
+  
+  
+  p.lead {
+    font-size: $text-size;
+    font-weight: $text-size;
+  }
+  
+  .site-title {
+    a { 
+    color:$border-color;
+        &:hover, &:active { 
+            color: $indigo;
+        } 
+    }
+  }
+  .subheading {
+    font-size: $text-size;
+  }
+  
+  #sideNav{
+
+   .navbar-toggler:focus {
+    outline-color: $link-hover-color;
+  }
+}
+  
+ 
+ 
+.social-icons{
+    .social-icon {
+        background-color: $gray-700;
+        color: $white;
+        font-size: $text-size;
+        margin-right: $text-size;
+
+        &:hover {
+            background-color: $primary;
+        }
+    }
+  }
+  .dev-icons {
+    font-size: $text-size;
+  }
+
+a.badge.bg-secondary.link-light {
+    color: $gray-200;
+    
+    &:hover{
+        color: $gray-700;
+    }
+}
+
+.wp-pagenavi {
+    a, span {
+    color: $white;
+    background-color: $link-hover-color;
+    border: 1px solid $border-color;
+    }
+
+    a:hover, span.current {
+    border-color: $border-color;
+    background-color: $link-hover-color;
+    }
+
+    span.current {
+    background-color:$primary;
+    }
+}
+
+.nav-links,
+.navigation {
+    a,
+    a:hover,
+    a.active,
+    a.disabled,
+    li a,
+    li a:hover,
+    li.active a,
+    li.disabled {
+        color: $white;
+        font-family: $font-family-monospace;
+        background-color: $primary;
+    }
+    
+    li {
+        display: inline;
+    }
+
+    a:hover,
+    a.active,
+    li a:hover,
+    li.active a {
+        background-color: $link-hover-color;
+    }
+}
