@@ -248,15 +248,18 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/template-functions.php';
 
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
 
 require get_template_directory() . '/inc/breadcrumb.php';
-
+/** Navbar functions for admins */
 require get_template_directory() . '/inc/admin-functions.php';
+
+
+/**
+ * Customizer additions. Fuckin Horror Clown show
+ */
+require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer-dynamic-style.php';
+// require get_template_directory() . '/inc/dynamic-theme-style.php';
 
 /**
  * Load Jetpack compatibility file.
