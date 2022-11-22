@@ -53,7 +53,7 @@
 			?></span>
 			<a class="navbar-brand js-scroll-trigger" href="#page-top">
 				<div class="d-none d-lg-block d-xl-block">
-					<?php echo get_custom_logo(); ?>
+					<?php the_logo_thumbnail(); ?>
 				</div>
 			</a>
 		
@@ -84,7 +84,7 @@
 					?>
 				</div>
 				<div class="col-6 d-lg-none d-xl-none ">
-					<?php echo get_custom_logo(); ?>
+					<?php the_logo_thumbnail(); ?>
 				</div>
 			</div>
 		</div>
