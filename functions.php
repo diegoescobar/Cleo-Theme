@@ -219,6 +219,22 @@ function get_cleo_custom_logo(){
 	
 }
 
+
+function get_logo_thumbnail(){
+	global $post;
+
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	$image = wp_get_attachment_image_src( $custom_logo_id , 'thumbnail' );
+	return $image[0];
+}
+
+function the_logo_thumbnail(){
+
+	echo '<a href="' . site_url() .'" class="custom-logo-link" rel="home" aria-current="page"><img src="'. get_logo_thumbnail()  .'" class="custom-logo" alt="'.get_bloginfo('name').'" decoding="async"></a>';
+
+	// echo "<img src=" . get_logo_thumbnail() . '">';
+}
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *

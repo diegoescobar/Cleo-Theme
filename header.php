@@ -86,7 +86,7 @@
 					?>
 				</div>
 				<div class="col-6 d-lg-none d-xl-none ">
-					<?php echo get_custom_logo(); ?>
+					<?php the_logo_thumbnail(); ?>
 				</div>
 			</div>
 		</div>
