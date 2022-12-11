@@ -203,6 +203,22 @@ function cleo_setup() {
 }
 add_action( 'after_setup_theme', 'cleo_setup' );
 
+function get_cleo_custom_logo(){
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+	// if (file_exists($logo[0])){
+	// 	var_dump( $logo[0] );
+	// }
+
+	if ( has_custom_logo()) {
+		echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+	} else {
+		echo '<h1>' . get_bloginfo('name') . '</h1>';
+	}
+	
+}
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -223,7 +239,9 @@ function cleo_scripts() {
 	wp_enqueue_style( 'cleo-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'cleo-style', 'rtl', 'replace' );
 
-	// wp_enqueue_style( 'bs-resume-colours', get_template_directory_uri() .'/css/resume-colour.css', array(), _S_VERSION );
+	wp_enqueue_style( 'bs-resume', get_template_directory_uri() .'/css/resume.css', array(), _S_VERSION );
+
+	wp_enqueue_style( 'bs-resume-colours', get_template_directory_uri() .'/css/resume-colour.css', array(), _S_VERSION );
 
 	wp_enqueue_script( 'cleo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 

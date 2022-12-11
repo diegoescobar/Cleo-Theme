@@ -1,17 +1,68 @@
-$gray-100 : #123 !default;
-$gray-200 : #123 !default;
-$gray-700 : #123 !default;
-$white : #123 !default;
-$primary : #123 !default;
-$indigo : #123 !default;
-$border-color : #123 !default;
-$link-hover-color : #123 !default;
-$font-family-monospace : #123 !default;
-$primary : #666 !default;
-$secondary : #666 !default;
-$text-size : 18px !default;
 
-body {
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+// $blue:    #0d6efd !default;
+// $indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+// $pink:    #d63384 !default;
+// $red:     #dc3545 !default;
+// $orange:  #bd5d38 !default;
+// $yellow:  #ffc107 !default;
+// $green:   #198754 !default;
+$teal:    #20c997 !default;
+$cyan:    #0dcaf0 !default;
+
+
+/** Progress colours 
+  * https://www.flagcolorcodes.com/progress-pride
+*/
+$red:     #E40303 !default;
+$orange:  #FF8C00 !default;
+$yellow:  #FFED00 !default;
+$green:   #008026 !default;
+$indigo:  #24408E !default;
+$violet:  #732982 !default;
+// $white:   #FFFFFF !default;
+$pink:    #FFAFC8 !default;
+$blue:    #74D7EE !default;
+$brown:   #613915 !default;
+$black:   #000000 !default;
+
+
+
+
+$primary:       $pink !default;
+$secondary:     $gray-200 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-900 !default;
+$dark:          $gray-100 !default;
+
+$body-bg:                   $white !default;
+$body-color:                $gray-900 !default;
+$body-text-align:           null !default;
+
+$border-color:                $gray-300 !default;
+
+$link-color:                              $primary !default;
+$link-decoration:                         underline !default;
+$link-shade-percentage:                   20% !default;
+$link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
+
+
+  body {
     background-color: $gray-100;
   }
   

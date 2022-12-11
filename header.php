@@ -53,7 +53,9 @@
 			?></span>
 			<a class="navbar-brand js-scroll-trigger" href="#page-top">
 				<div class="d-none d-lg-block d-xl-block">
-					<?php echo get_custom_logo(); ?>
+					<?php //var_dump( get_custom_logo() ); 
+						get_cleo_custom_logo();
+					?>
 				</div>
 			</a>
 		
