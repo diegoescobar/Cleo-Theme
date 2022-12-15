@@ -1,5 +1,10 @@
 @import "../bootstrap/variables";
 
+
+$fontfamily: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+
+
 body {
     padding-top: 3.375rem;
     background-color: $secondary;
@@ -29,26 +34,26 @@ body {
   }
 
   a {
-    font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: $fontfamily;
   }
   
   p.lead {
-    font-size: 1.15rem;
-    font-weight: 400;
+    font-size: $lead-font-size;
+    font-weight: $lead-font-weight;
   }
   
   .site-title {
     a { 
-    color:$border-color;
+    color: $border-color;
         &:hover, &:active { 
-            color: $indigo;
+            color: $secondary;
         } 
     }
   }
  
 
   .subheading {
-    font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: $fontfamily;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 1.5rem;
@@ -68,7 +73,7 @@ body {
   }
   
   .site-description {
-    color: $gray-200;
+    color: $dark;//$gray-200;
   }
 
   @media (min-width: 992px) {

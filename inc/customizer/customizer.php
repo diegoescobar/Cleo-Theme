@@ -32,7 +32,7 @@ function cleo_customize_register( $wp_customize ) {
 		);
 	}
 }
-add_action( 'customize_register', 'cleo_customize_register' );
+// add_action( 'customize_register', 'cleo_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
@@ -59,3 +59,27 @@ function cleo_customize_preview_js() {
 	wp_enqueue_script( 'cleo-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
 }
 add_action( 'customize_preview_init', 'cleo_customize_preview_js' );
+
+
+
+
+
+add_action( "customize_register", "theme_customize_register" );
+function theme_customize_register( $wp_customize ) {
+
+ // Remove header image and widgets option from theme customizer
+ $wp_customize->remove_control("header_image");
+ $wp_customize->remove_control("blogdescription");
+ $wp_customize->remove_panel("widgets");
+
+ //  $wp_customize->remove_section("nav");
+//  $wp_customize->remove_section("site_identity");
+
+ // Remove Colors, Background image, and Static front page 
+ // option from theme customizer     
+ $wp_customize->remove_section("colors");
+ $wp_customize->remove_section("background_image");
+ $wp_customize->remove_section("static_front_page");
+
+
+}

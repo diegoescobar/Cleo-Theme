@@ -291,7 +291,7 @@ require get_template_directory() . '/inc/admin-functions.php';
 /**
  * Customizer additions. Fuckin Horror Clown show
  */
-// require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer/customizer.php';
 // require get_template_directory() . '/inc/customizer/customizer-dynamic-style.php';
 // require get_template_directory() . '/inc/customizer/dynamic-theme-style.php';
 
