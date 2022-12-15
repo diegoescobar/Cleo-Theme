@@ -1,3 +1,7 @@
+// @import './bootstrap/variables';
+// /Users/diegoescobar/LocalHost/Wordpress/Cleocatra/wp-content/themes/cleopress/sass/bootstrap/_variables.scss
+
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
@@ -39,9 +43,9 @@ $brown:   #613915 !default;
 $black:   #000000 !default;
 
 
+$text-size: 12px;
 
-
-$primary:       $pink !default;
+$primary:       $orange !default;
 $secondary:     $gray-200 !default;
 $success:       $green !default;
 $info:          $cyan !default;

@@ -111,13 +111,13 @@ add_action('customize_save_after', function() {
 	if (!empty($css) && is_string($css)) {
 		file_put_contents($target_css, $css);
 	} else {
-        throw_error( implode(';', $css) ); 
+        customizer_throw_error( implode(';', $css) ); 
         // var_dump( $css );
     }
 
 });
 
-function throw_error( $message ){
+function customizer_throw_error( $message ){
     header('HTTP/1.1 500 Internal Server Booboo');
     header('Content-Type: application/json; charset=UTF-8');
     // if (is_array()){ $css_test = implode('; ', $variables); }

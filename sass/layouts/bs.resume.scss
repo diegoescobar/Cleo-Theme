@@ -3,7 +3,6 @@
 body {
     padding-top: 3.375rem;
     background-color: $secondary;
-    // color: $gray-100;
   }
   
   @media (min-width: 992px) {
@@ -25,7 +24,6 @@ body {
   .h6 {
     text-transform: uppercase;
   }
-  
   h1, .h1 {
     line-height: 1;
   }
@@ -47,6 +45,8 @@ body {
         } 
     }
   }
+ 
+
   .subheading {
     font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     text-transform: uppercase;
@@ -67,6 +67,10 @@ body {
     outline-color: $link-hover-color;
   }
   
+  .site-description {
+    color: $gray-200;
+  }
+
   @media (min-width: 992px) {
      
       padding-left: 0;
@@ -97,7 +101,7 @@ body {
         flex-grow: 0;
         width: 100%;
         margin-bottom: auto;
-        
+
         .navbar-nav {
         flex-direction: column;
         width: 100%;
@@ -107,16 +111,15 @@ body {
                 display: block;
                 }
             }
-            
         }
     }
   }
 }
-    .entry-title {
-        line-break: auto;
-        -ms-word-wrap: break-word;
-        word-wrap: break-word;
-    }
+  .entry-title {
+      line-break: auto;
+      -ms-word-wrap: break-word;
+      word-wrap: break-word;
+  }
 
 .social-icons{
     .social-icon {
@@ -175,10 +178,11 @@ a.post-thumbnail img {
 }
 
 a.badge.bg-secondary.link-light {
-    color: $gray-200;
-    
+    // color: $light;
+    color: $primary;
+    border: $primary 1px solid;
     &:hover{
-        color: $gray-700;
+        color: $light;
     }
 }
 

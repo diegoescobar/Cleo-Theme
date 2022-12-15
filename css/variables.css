@@ -1,60 +1,60 @@
 body {
-  background-color: #d62f45;
+  background-color: #e197e5;
 }
 p.lead {
-  font-size: 19;
-  font-weight: 19;
+  font-size: 12px;
+  font-weight: 12px;
 }
 .site-title a {
-  color: #d62f45;
+  color: #e197e5;
 }
 .site-title a:hover, .site-title a:active {
-  color: #d62f45;
+  color: #e197e5;
 }
 .subheading {
-  font-size: 19;
+  font-size: 12px;
 }
 #sideNav .navbar-toggler:focus {
-  outline-color: #d62f45;
+  outline-color: #e197e5;
 }
 .social-icons .social-icon {
-  background-color: #d62f45;
-  color: #d62f45;
-  font-size: 19;
-  margin-right: 19;
+  background-color: #e197e5;
+  color: #e197e5;
+  font-size: 12px;
+  margin-right: 12px;
 }
 .social-icons .social-icon:hover {
-  background-color: #d62f45;
+  background-color: #e197e5;
 }
 .dev-icons {
-  font-size: 19;
+  font-size: 12px;
 }
 a.badge.bg-secondary.link-light {
-  color: #d62f45;
+  color: #e197e5;
 }
 a.badge.bg-secondary.link-light:hover {
-  color: #d62f45;
+  color: #e197e5;
 }
 .wp-pagenavi a, .wp-pagenavi span {
-  color: #d62f45;
-  background-color: #d62f45;
-  border: 1px solid #d62f45;
+  color: #e197e5;
+  background-color: #e197e5;
+  border: 1px solid #e197e5;
 }
 .wp-pagenavi a:hover, .wp-pagenavi span.current {
-  border-color: #d62f45;
-  background-color: #d62f45;
+  border-color: #e197e5;
+  background-color: #e197e5;
 }
 .wp-pagenavi span.current {
-  background-color: #d62f45;
+  background-color: #e197e5;
 }
 .nav-links a, .nav-links a:hover, .nav-links a.active, .nav-links a.disabled, .nav-links li a, .nav-links li a:hover, .nav-links li.active a, .nav-links li.disabled, .navigation a, .navigation a:hover, .navigation a.active, .navigation a.disabled, .navigation li a, .navigation li a:hover, .navigation li.active a, .navigation li.disabled {
-  color: #d62f45;
-  font-family: #d62f45;
-  background-color: #d62f45;
+  color: #e197e5;
+  font-family: #e197e5;
+  background-color: #e197e5;
 }
 .nav-links li, .navigation li {
   display: inline;
 }
 .nav-links a:hover, .nav-links a.active, .nav-links li a:hover, .nav-links li.active a, .navigation a:hover, .navigation a.active, .navigation li a:hover, .navigation li.active a {
-  background-color: #d62f45;
+  background-color: #e197e5;
 }

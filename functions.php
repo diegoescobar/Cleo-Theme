@@ -212,7 +212,7 @@ function get_cleo_custom_logo(){
 	// }
 
 	if ( has_custom_logo()) {
-		echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+		echo '<img class="custom-logo" src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
 	} else {
 		echo '<h1>' . get_bloginfo('name') . '</h1>';
 	}
@@ -255,9 +255,9 @@ function cleo_scripts() {
 	wp_enqueue_style( 'cleo-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'cleo-style', 'rtl', 'replace' );
 
-	wp_enqueue_style( 'bs-resume', get_template_directory_uri() .'/css/resume.css', array(), _S_VERSION );
+	// wp_enqueue_style( 'bs-resume', get_template_directory_uri() .'/css/resume.css', array(), _S_VERSION );
 
-	wp_enqueue_style( 'bs-resume-colours', get_template_directory_uri() .'/css/resume-colour.css', array(), _S_VERSION );
+	// wp_enqueue_style( 'bs-resume-colours', get_template_directory_uri() .'/css/resume-colour.css', array(), _S_VERSION );
 
 	wp_enqueue_script( 'cleo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
@@ -291,9 +291,9 @@ require get_template_directory() . '/inc/admin-functions.php';
 /**
  * Customizer additions. Fuckin Horror Clown show
  */
-require get_template_directory() . '/inc/customizer.php';
-require get_template_directory() . '/inc/customizer-dynamic-style.php';
-// require get_template_directory() . '/inc/dynamic-theme-style.php';
+// require get_template_directory() . '/inc/customizer.php';
+// require get_template_directory() . '/inc/customizer/customizer-dynamic-style.php';
+// require get_template_directory() . '/inc/customizer/dynamic-theme-style.php';
 
 /**
  * Load Jetpack compatibility file.
