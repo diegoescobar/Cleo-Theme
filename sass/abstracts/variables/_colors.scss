@@ -1,23 +1,34 @@
-$color__background-body: #fff;
+$color__background-body: $body-bg;
 $color__background-screen: #f1f1f1;
 $color__background-hr: $gray-400;
-$color__background-button: #e6e6e6;
+$color__background-button: $primary;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
 $color__text-screen: $link-color;
 $color__text-input: $gray-600;
 $color__text-input-focus: $gray-900;
-$color__link: $link-color; //royalblue
-$color__link-visited: $link-color; //purple
-$color__link-hover: $link-hover-color; //midnightblue
-$color__text-main: $gray-800;
-
-$color__border-button: $gray-400 $gray-400 $gray-300;
-$color__border-button-hover: $gray-400 $gray-300 $gray-200;
-$color__border-button-focus: $gray-200 $gray-300 $gray-300;
-$color__border-input: $gray-400;
-$color__border-abbr: $gray-600;
+$color__link: $link-color;
+$color__link-visited: $link-color;
+$color__link-hover: $link-hover-color;
+$color__text-main: $gray-900;
 
 
+
+$color__border-button: $primary;
+$color__border-input: $primary;
+$color__button-text: $secondary;
+
+$color__border-abbr: $primary;
+
+
+
+$color__border-button-hover: $primary;
+$color__background-button-hover: $secondary;
+$color__button-text-hover: $primary;
+
+
+$color__border-button-focus: $primary;
+$color__background-button-focus: $secondary;
+$color__button-text-focus: $secondary;
 
