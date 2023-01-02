@@ -10,7 +10,7 @@
 
 $postClasses = (!is_single() ) ? 'col-6 col-lg-4' : '' ; 
 
-$postClasses = ( is_active_sidebar('sidebar-widgets') ) ? 'col-12 col-3' : $postClasses;
+$postClasses = ( is_active_sidebar('sidebar-widgets') || is_active_sidebar('archive-widgets')) ? 'col-12 col-3' : $postClasses;
 
 ?>
     <!-- Post content-->
