@@ -7,9 +7,14 @@
  * @package cleo
  */
 
+
+$postClasses = (!is_single() ) ? 'col-6 col-lg-4' : '' ; 
+
+$postClasses = ( is_active_sidebar('sidebar-widgets') ) ? 'col-12 col-3' : $postClasses;
+
 ?>
     <!-- Post content-->
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class( $postClasses ); ?>>
         <!-- Post header-->
         <header class="mb-4">
             <!-- Post title-->
@@ -35,7 +40,7 @@
 
         <!-- Post content-->
         <section class="mb-5">
-            <?php if ( is_singular() || has_post_format( 'gallery' ) ): 
+            <?php if ( is_singular() ): 
             the_content(
                 sprintf(
                     wp_kses(
@@ -50,6 +55,11 @@
                     wp_kses_post( get_the_title() )
                 )
             );
+            elseif ( has_post_format( 'gallery' ) ):
+
+                echo '<a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
+                the_post_thumbnail();
+                echo '</a>';
             else :
                 the_excerpt(sprintf(
                     wp_kses(
@@ -68,7 +78,7 @@
 
             endif; ?>
         
-        <?php if ( !is_singular() ) : ?>
+        <?php if ( is_singular() ) : ?>
             <div class="nav-links"><?php cleo_leave_comment(); ?></div>
         <?php endif; ?>
         </section>

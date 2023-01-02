@@ -51,7 +51,8 @@
 				<?php
 			endif;
 			?></span>
-			<a class="navbar-brand custom-logo-link js-scroll-trigger" href="#page-top">
+			<?php /* <a class="navbar-brand custom-logo-link js-scroll-trigger" href="#page-top"> */ ?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<div class="d-none d-lg-block d-xl-block">
 					<?php //var_dump( get_custom_logo() ); 
 						get_cleo_custom_logo();

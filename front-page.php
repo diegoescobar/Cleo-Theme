@@ -31,10 +31,11 @@ get_header();
 			if( is_active_sidebar('front-widgets') ) { ?>
 				<!-- Side widgets-->
 				<div class="col-lg-4">
+					<div class="sticky-md-top">
 					<?php
 					//get_sidebar();
 					dynamic_sidebar('front-widgets'); ?>
-				</div>
+				</div></div>
 				<!-- /widgets-container -->
 			<?php } ?>
 		</div>

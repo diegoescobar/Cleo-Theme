@@ -52,8 +52,9 @@ get_header();
 			<?php if( is_active_sidebar('search-widgets') ) { ?>
 				<!-- Side widgets-->
 				<div class="col-lg-4">
+					<div class="sticky-md-top">
 					<?php dynamic_sidebar('search-widgets'); ?>
-				</div>
+				</div></div>
 				<!-- /widgets-container -->
 			<?php } ?>
 		</div>

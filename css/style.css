@@ -11483,6 +11483,19 @@ textarea {
 	display: inline-block;
 }
 
+.post-thumbnail {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+	border-radius: 25px;
+	border: solid 10px #6f42c1;
+	overflow: hidden;
+}
+
+.post-thumbnail img {
+	margin-bottom: 0;
+}
+
 /* Captions
 --------------------------------------------- */
 .wp-caption {
@@ -11816,7 +11829,7 @@ section.resume-section .resume-section-content {
 	}
 }
 
-a.post-thumbnail img {
+.single-post > a.post-thumbnail img {
 	margin-bottom: 20px;
 }
 

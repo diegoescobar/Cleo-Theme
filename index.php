@@ -27,7 +27,7 @@ get_header();
 				</header>
 				<?php
 			endif;
-
+			?><div class="row"><?php
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
@@ -39,7 +39,7 @@ get_header();
 				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;
-
+			?></div><?php
 			// the_posts_navigation();
 
 			cleo_numeric_posts_nav();
@@ -57,10 +57,11 @@ get_header();
 			if( is_active_sidebar('sidebar-widgets') ) { ?>
 				<!-- Side widgets-->
 				<div class="col-lg-4">
+					<div class="sticky-md-top">
 					<?php
 					//get_sidebar();
 					dynamic_sidebar('sidebar-widgets'); ?>
-				</div>
+				</div></div>
 				<!-- /widgets-container -->
 			<?php } ?>
 		</div>

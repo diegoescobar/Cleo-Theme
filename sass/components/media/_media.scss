@@ -11,3 +11,16 @@
 .custom-logo-link {
 	display: inline-block;
 }
+
+.post-thumbnail {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+	border-radius: 25px;
+	border: solid 10px $primary;
+	overflow: hidden;
+
+	img {
+		margin-bottom: 0;
+	}
+}

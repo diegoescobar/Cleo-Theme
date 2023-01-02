@@ -41,10 +41,10 @@ get_header();
 			if( is_active_sidebar('single-widgets') ) { ?>
 				<!-- Side widgets-->
 				<div class="col-lg-4">
-					<?php
-					//get_sidebar();
+					<div class="sticky-md-top">
+					<?php //get_sidebar();
 					dynamic_sidebar('single-widgets'); ?>
-				</div>
+				</div></div>
 				<!-- /widgets-container -->
 			<?php } ?>
 		</div>
