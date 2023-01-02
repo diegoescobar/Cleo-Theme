@@ -87,7 +87,7 @@
 					?>
 				</div>
 				<div class="col-6 d-lg-none d-xl-none ">
-					<?php the_logo_thumbnail(); ?>
+					<?php get_search_form(); ?>
 				</div>
 			</div>
 		</div>
