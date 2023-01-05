@@ -22,7 +22,7 @@
         var splitURL = window.location.pathname.split('/');
         var joinedURL;
 
-        if (splitURL[splitURL.length - 2] == "gallery"){
+        if (isNaN(splitURL[splitURL.length - 2])){
             joinedURL = splitURL.join('/') + 'page/2/';
         } else {
             splitURL[splitURL.length - 2] = parseInt(splitURL[splitURL.length - 2]) + 1;
