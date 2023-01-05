@@ -7,11 +7,13 @@
  * @package cleo
  */
 
-get_header();
+if ( !wp_doing_ajax()) { 
+	get_header();
+}
 ?>
 
 	<main id="primary" class="site-main container mt-5">
-		<div class="row">
+		<div class="content-row row">
 			<div class="<?php echo ( is_active_sidebar('search-widgets') ) ?  'col-lg-8' : 'col-lg-11'; ?>">
 
 		<?php if ( have_posts() ) : ?>
@@ -25,7 +27,13 @@ get_header();
 				</h1>
 			</header><!-- .page-header -->
 
-			<?php cleo_numeric_posts_nav(); ?>
+			<?php 
+			
+			cleo_numeric_posts_nav();
+			
+			cleo_infinite_load_more();
+			
+			?>
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -41,6 +49,8 @@ get_header();
 
 			cleo_numeric_posts_nav();
 
+			cleo_infinite_load_more();
+
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
@@ -49,7 +59,7 @@ get_header();
 		?>
 		</div>
 
-			<?php if( is_active_sidebar('search-widgets') ) { ?>
+			<?php if( is_active_sidebar('search-widgets') && !wp_doing_ajax() ) { ?>
 				<!-- Side widgets-->
 				<div class="col-lg-4">
 					<div class="sticky-md-top">
@@ -62,5 +72,6 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-
-get_footer();
+if ( !wp_doing_ajax()) { 
+	get_footer();
+}

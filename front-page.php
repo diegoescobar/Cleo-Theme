@@ -6,8 +6,9 @@
  *
  * @package cleo
  */
-
-get_header();
+if ( !wp_doing_ajax()) { 
+	get_header();
+}
 ?>
 
 	<main id="primary" class="site-main container mt-5">
@@ -28,7 +29,7 @@ get_header();
 			</div>
 			<!-- Side widgets-->
 			<?php 
-			if( is_active_sidebar('front-widgets') ) { ?>
+			if( is_active_sidebar('front-widgets') && !wp_doing_ajax() ) { ?>
 				<!-- Side widgets-->
 				<div class="col-lg-4">
 					<div class="sticky-md-top">
@@ -42,5 +43,6 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-
-get_footer();
+if ( !wp_doing_ajax()) { 
+	get_footer();
+}

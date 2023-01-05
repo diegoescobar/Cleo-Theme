@@ -256,10 +256,14 @@ function cleo_scripts() {
 	wp_style_add_data( 'cleo-style', 'rtl', 'replace' );
 
 	// wp_enqueue_style( 'bs-resume', get_template_directory_uri() .'/css/resume.css', array(), _S_VERSION );
+	
+	// wp_enqueue_script("jquery");
 
 	// wp_enqueue_style( 'bs-resume-colours', get_template_directory_uri() .'/css/resume-colour.css', array(), _S_VERSION );
 
 	wp_enqueue_script( 'cleo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+	wp_enqueue_script( 'cleo-load-more',  get_template_directory_uri() . '/js/loadmore.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -409,6 +413,33 @@ function cleo_numeric_posts_nav() {
   
     echo '</ul></div>' . "\n";
   
+}
+
+function cleo_infinite_load_more(){
+
+   // Initial Post Load.
+   ?>
+   <div class="vl-container mt-20 md:mt-28 xl:mt-32 mb-28 md:mb-36 xl:mb-40">
+      <div id="load-more-content" class="flex flex-wrap -mx-1 overflow-hidden">
+         <?php
+        //  ajax_script_post_load_more( true );
+
+         // If user is not in editor and on page one, show the load more.
+         ?>
+      </div>
+	  <a href="../../page/<?php echo (get_query_var('paged') + 1 ); ?>" class="load-more-link">Load More</a>
+      <button id="load-more" data-page="<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>"
+              class="load-more-btn mt-20 block mx-auto px-4 py-2 border border-transparent transition ease-in-out duration-150 cursor-not-allowed">
+         <span class="screen-reader-text"><?php esc_html_e( 'Load More', 'text-domain' ); ?></span>
+         <svg class="animate-spin -ml-1 mr-3 h-8 w-8 text-brand-light-blue" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+         </svg>
+      </button>
+   </div>
+   <?php
 }
 
 /** Bootstrap Template fix */

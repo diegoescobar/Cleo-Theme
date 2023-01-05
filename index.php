@@ -27,7 +27,7 @@ get_header();
 				</header>
 				<?php
 			endif;
-			?><div class="row"><?php
+			?><div class="content-row row"><?php
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
@@ -43,6 +43,8 @@ get_header();
 			// the_posts_navigation();
 
 			cleo_numeric_posts_nav();
+
+			cleo_infinite_load_more();
 
 		else :
 
