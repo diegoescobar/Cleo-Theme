@@ -41,6 +41,10 @@
 
                 window.history.replaceState(nextState, nextTitle, nextURL);
 
+                var newpostID = String(xhttp.response.querySelector('article').getAttribute('id'));
+                
+                document.getElementById( newpostID ).focus();
+
             }
         };
 
